@@ -82,8 +82,8 @@ let validate (input: PersonInput) : ValidationResult<ValidPerson, PersonValidati
     else
         Error allErrors
 
-let testInputOK : PersonInput = { Name = Some "Aleesha"; DOB = Some (DateTime(2002, 11, 14)); Appointment = Some (DateTime.Now.AddDays(1.0)) }
 let testInputError : PersonInput = { Name = Some "A"; DOB = Some (DateTime(1500, 1, 1)); Appointment = Some (DateTime.Now.AddDays(-10.0)) }
+let testInputOK : PersonInput = { Name = Some "Aleesha"; DOB = Some (DateTime(2002, 11, 14)); Appointment = Some (DateTime.Now.AddDays(1.0)) }
 
 let resultFailure = validate testInputError
 let resultSuccess = validate testInputOK
